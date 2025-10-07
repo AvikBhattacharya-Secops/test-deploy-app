@@ -14,7 +14,7 @@ pipeline {
         ECR_REPO = "${AWS_ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com/my-repo"
         DOCKERHUB_REPO = 'avikbhattacharya056/my-calculator-image'
         ARGOCD_SERVER = '13.233.233.91:30493'
-        GITHUB_REPO = 'https://github.com/AvikBhattacharya-Secops/complete-project-all.git' // GitHub Repo URL
+        GITHUB_REPO = 'https://github.com/AvikBhattacharya-Secops/test-deploy-app.git' // GitHub Repo URL
     }
 
     stages {
