@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd-cluster-rbac
+  namespace: argocd  # This is the namespace where Argo CD is installed
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: kube-system  # Namespace is ignored for cluster-scoped resources
+  project: default
+  source:
+    repoURL: https://github.com/AvikBhattacharya-Secops/complete-project-all
+    targetRevision: main
+    path: Cluster resources/rbac
+    syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=false
+

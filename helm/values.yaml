@@ -1,0 +1,17 @@
+replicaCount: 2
+
+image:
+  repository: avikbhattacharya056/my-calculator-image
+  tag: 11
+  pullPolicy: Always
+
+service:
+  type: LoadBalancer
+  port: 80
+  targetPort: 8080
+
+resources: {}
+
+# Optional overrides for name
+# nameOverride: "calculator"
+# fullnameOverride: "calculator"

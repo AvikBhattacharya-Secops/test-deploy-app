@@ -1,0 +1,15 @@
+apiVersion: v1
+data:
+  policy.csv: |
+    g, admin, role:admin
+    p, admin, applications, get, *, allow
+    p, admin, applications, sync, *, allow
+    p, admin, applications, create, *, allow
+    p, admin, applications, update, *, allow
+    p, admin, applications, delete, *, allow
+  policy.default: role:admin
+  policy.matchMode: glob
+kind: ConfigMap
+metadata:
+  name: argocd-rbac-cm
+  namespace: argocd
